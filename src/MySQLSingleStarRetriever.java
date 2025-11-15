@@ -11,14 +11,14 @@ import java.sql.SQLException;
 public class MySQLSingleStarRetriever implements SingleStarRetriever {
 
     String SELECT_MOVIE_BY_ID =
-              "SELECT *" +
-              "FROM" +
-              "  stars," +
-              "  stars_in_movies," +
-              "  movies" +
-              "WHERE" +
-              "  movies.id = stars_in_movies.movie_id" +
-              "  AND stars_in_movie.star_id = stars.id" +
+              "SELECT * " +
+              "FROM " +
+              "  stars, " +
+              "  stars_in_movies, " +
+              "  movies " +
+              "WHERE " +
+              "  movies.id = stars_in_movies.movieId " +
+              "  AND stars_in_movies.starId = stars.id " +
               "  AND stars.id = ?";
 
     private DataSource dataSource;
